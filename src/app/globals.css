@@ -1,12 +1,29 @@
 @import "tailwindcss";
 
 @theme {
+  /* Fondos */
   --color-background: #0f0f0f;
   --color-surface: #1a1a1a;
+  --color-surface-hover: #242424; /* Un pelín más claro para interactividad */
+
+  /* Textos */
   --color-text-primary: #ffffff;
   --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280; /* Para pie de fotos o copyright */
+
+  /* Identidad */
   --color-accent: #ef4444;
+  --color-accent-dark: #b91c1c; /* Para gradientes o estados activos */
+  
+  /* Estructural */
   --color-border: #262626;
+  
+  /* Efectos Pro (Opcional) */
+  --color-glow: rgba(239, 68, 68, 0.15); /* Para sombras con color de acento */
+
+
+  --spacing-header-mobile: 64px;
+  --spacing-header-desktop: 80px;
 }
 
 * {
@@ -15,4 +32,5 @@
 
 body {
   color: var(--color-text-primary);
+  background-color: var(--color-background);
 }
