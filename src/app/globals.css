@@ -22,8 +22,10 @@
   --color-glow: rgba(239, 68, 68, 0.15); /* Para sombras con color de acento */
 
 
-  --spacing-header-mobile: 64px;
-  --spacing-header-desktop: 80px;
+  --spacing-header-mobile: 80px;
+  --spacing-header-desktop: 96px;
+
+  --spacing-neutral: 16px;
 }
 
 * {
