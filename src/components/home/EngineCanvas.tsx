@@ -1,6 +1,6 @@
 "use client";
-import { Canvas } from "@react-three/fiber";
-import { useGLTF, PresentationControls, Float, ContactShadows, Environment } from "@react-three/drei";
+import { Canvas, useThree } from "@react-three/fiber";
+import { PresentationControls, Float, ContactShadows, Environment } from "@react-three/drei";
 import { Suspense } from "react";
 
 function EngineModel() {
@@ -22,9 +22,20 @@ function EngineModel() {
   );
 }
 
-export default function EngineCanvas() {
+function ResponsiveModel() {
+  const { viewport } = useThree();
+  const scale = Math.min(viewport.width, viewport.height) / 2.5; // Ajusta el divisor para escalar el modelo a tu gusto
+
   return (
-    <div className="absolute bottom-0 h-2/3 w-full">
+    <group scale={scale}>
+      <EngineModel />
+    </group>
+  );
+}
+
+export default function EngineCanvas({className}: {className?: string}) {
+  return (
+    <div className={className}>
       <Canvas shadows camera={{ position: [0, 0, 4], fov: 45 }}>
         <Suspense fallback={null}>
           {/* 1. Iluminación de Estudio */}
@@ -42,7 +53,7 @@ export default function EngineCanvas() {
           >
             {/* 3. Efecto de flotación suave */}
             <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-              <EngineModel />
+              <ResponsiveModel />
             </Float>
           </PresentationControls>
 
