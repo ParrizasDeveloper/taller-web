@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
+import SmoothScroll from "@/providers/SmoothScroll";
 import { roboto } from "@/styles/fonts";
 
 

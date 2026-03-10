@@ -1,4 +1,4 @@
-import { Archivo, Geist, Geist_Mono, Roboto_Mono } from "next/font/google";
+import { Archivo, Geist, Geist_Mono, Rajdhani, Roboto_Mono } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,4 +20,10 @@ const roboto = Roboto_Mono({
     subsets: ["latin"],
 })
 
-export { geistSans, geistMono, archivo, roboto };
+const rajdhani = Rajdhani({
+    variable: "--font-rajdhani",
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+})
+
+export { geistSans, geistMono, archivo, roboto, rajdhani };
